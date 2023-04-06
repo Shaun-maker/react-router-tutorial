@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './pages/Home';
-import Survey from './pages/Survey';
-import Header from './components/Header';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Root from './routes/root';
+import ErrorPage from './error-page';
+import Contact from './routes/contact';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Header />,
+    element: <Root />,
+    errorElement: <ErrorPage />,
   },
   {
-    path: '/survey',
-    element: <Survey />,
+    path: 'contacts/:contactId',
+    element: <Contact />,
   },
 ]);
 
